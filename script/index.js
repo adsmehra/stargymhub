@@ -63,3 +63,15 @@ images[1] = "../images/couple-training.jpg";
 images[2] = "../images/fitnish-media.jpg";
 images[3] = "../images/../images/training.jpeg";
 images[4] = "../images/../../images/pexels-leon.jpg";
+
+window.watsonAssistantChatOptions = {
+  integrationID: "5d058522-3955-4159-8414-60818d07c510", // The ID of this integration.
+  region: "au-syd", // The region your integration is hosted in.
+  serviceInstanceID: "2bf749cc-2a95-4b81-ba2f-4541787cb25d", // The ID of your service instance.
+  onLoad: async (instance) => { await instance.render(); }
+};
+setTimeout(function(){
+  const t=document.createElement('script');
+  t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
+  document.head.appendChild(t);
+});
